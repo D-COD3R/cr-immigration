@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "id": "cr-immigration",
+    "name": "CR Immigration",
+    "kind": "web-app",
+    "milestone": "Content and workflow validation"
+  },
+  "repository": {
+    "provider": "github",
+    "owner": "D-COD3R",
+    "name": "cr-immigration"
+  },
+  "deployment": {
+    "provider": "vercel",
+    "projectId": "prj_zrU9RmXqfIhHcBb9PzQ9GU8p062Q",
+    "projectName": "cr-immigration"
+  },
+  "productionUrl": null,
+  "statusFile": ".kerberos/status.json",
+  "contextFile": ".kerberos/context.md"
+}

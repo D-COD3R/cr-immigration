@@ -1,0 +1,12 @@
+{
+  "state": "attention",
+  "projectId": "cr-immigration",
+  "milestone": "Content and workflow validation",
+  "progress": 56,
+  "lastTask": null,
+  "missing": [
+    "Resolve open blockers",
+    "Confirm production health"
+  ],
+  "updatedAt": "2026-08-26T20:16:20.191Z"
+}
