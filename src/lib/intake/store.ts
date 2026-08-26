@@ -38,10 +38,66 @@ class ConsoleIntakeStore implements IntakeStore {
 }
 
 class SupabaseIntakeStore implements IntakeStore {
-  async save(_submission: IntakeSubmission): Promise<IntakeStoreResult> {
-    // TODO: server-side insert into `intake_submissions` with RLS enabled.
-    // Requires SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (server-only).
-    throw new Error("Supabase intake store not configured. Set INTAKE_STORE=console or implement it.");
+  async save(submission: IntakeSubmission): Promise<IntakeStoreResult> {
+    const url = process.env.SUPABASE_URL;
+    const secretKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!url || !secretKey) {
+      throw new Error("Supabase intake store is missing SUPABASE_URL or SUPABASE_SECRET_KEY.");
+    }
+
+    let endpoint: URL;
+    try {
+      endpoint = new URL("/rest/v1/intake_submissions", url);
+    } catch {
+      throw new Error("SUPABASE_URL is not a valid URL.");
+    }
+
+    if (endpoint.protocol !== "https:" && endpoint.hostname !== "127.0.0.1" && endpoint.hostname !== "localhost") {
+      throw new Error("SUPABASE_URL must use HTTPS outside local development.");
+    }
+
+    const id = referenceId();
+    const intake = { ...submission };
+    delete intake.companyWebsite;
+    const headers: Record<string, string> = {
+      apikey: secretKey,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    };
+    // Legacy service-role keys are JWTs. New sb_secret_* keys must only be
+    // sent as `apikey`; using one as a bearer token produces an Invalid JWT.
+    if (!secretKey.startsWith("sb_secret_")) {
+      headers.Authorization = `Bearer ${secretKey}`;
+    }
+
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        reference_id: id,
+        language: intake.language,
+        goal: intake.goal,
+        name: intake.name,
+        email: intake.email,
+        phone: intake.phone || null,
+        contact_preference: intake.contactPreference,
+        preferred_language: intake.preferredLanguage,
+        consent_to_contact: intake.consentToContact,
+        intake_data: intake,
+      }),
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
+
+    if (!response.ok) {
+      const requestId = response.headers.get("x-request-id");
+      throw new Error(
+        `Supabase intake insert failed (${response.status})${requestId ? ` [request ${requestId}]` : ""}.`
+      );
+    }
+
+    return { ok: true, referenceId: id };
   }
 }
 
