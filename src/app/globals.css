@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Foundation */
+  --color-ivory: #faf8f2;
+  --color-parchment: #f2ecdf;
+  --color-paper: #fffdf8;
+
+  /* Ink (text) */
+  --color-ink: #1d2a26;
+  --color-ink-soft: #46554f;
+  --color-ink-faint: #6b7873;
+
+  /* Forest (primary brand) */
+  --color-forest: #1e5741;
+  --color-forest-deep: #123c2b;
+  --color-forest-tint: #e3ede6;
+  --color-forest-mist: #f0f5f1;
+
+  /* Ocean (accent, restrained) */
+  --color-ocean: #2e6e8e;
+  --color-ocean-tint: #e5eef3;
+
+  /* Sand (warm detail) */
+  --color-sand: #c99a55;
+  --color-sand-tint: #f5ead8;
+
+  /* Borders & lines */
+  --color-line: #e4ddcd;
+  --color-line-soft: #ece7da;
+
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+
+  --shadow-card: 0 1px 2px rgb(29 42 38 / 0.04), 0 8px 24px -12px rgb(29 42 38 / 0.12);
+  --shadow-lifted: 0 2px 4px rgb(29 42 38 / 0.05), 0 20px 48px -20px rgb(18 60 43 / 0.22);
+
+  --tracking-heading: -0.02em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-forest-tint);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Subtle entrance used sparingly on hero + key reveals */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rise-in-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.rise-in-delay-2 {
+  animation-delay: 0.16s;
 }
