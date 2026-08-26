@@ -14,12 +14,9 @@ create table if not exists public.intake_submissions (
 );
 
 comment on table public.intake_submissions is
-  'Validated immigration intake submissions. Contains personal data; server access only.';
+  'Validated immigration intake submissions. Contains personal data, application server access only.';
 
-alter table public.intake_submissions enable row level security;
-
-revoke all on table public.intake_submissions from anon, authenticated;
-grant insert on table public.intake_submissions to service_role;
+revoke all on table public.intake_submissions from public;
 
 create index if not exists intake_submissions_submitted_at_idx
   on public.intake_submissions (submitted_at desc);

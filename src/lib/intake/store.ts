@@ -1,4 +1,5 @@
 import type { IntakeSubmission } from "./schema";
+import { neon } from "@neondatabase/serverless";
 
 export interface IntakeStoreResult {
   ok: true;
@@ -37,65 +38,40 @@ class ConsoleIntakeStore implements IntakeStore {
   }
 }
 
-class SupabaseIntakeStore implements IntakeStore {
+class NeonIntakeStore implements IntakeStore {
   async save(submission: IntakeSubmission): Promise<IntakeStoreResult> {
-    const url = process.env.SUPABASE_URL;
-    const secretKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-    if (!url || !secretKey) {
-      throw new Error("Supabase intake store is missing SUPABASE_URL or SUPABASE_SECRET_KEY.");
-    }
-
-    let endpoint: URL;
-    try {
-      endpoint = new URL("/rest/v1/intake_submissions", url);
-    } catch {
-      throw new Error("SUPABASE_URL is not a valid URL.");
-    }
-
-    if (endpoint.protocol !== "https:" && endpoint.hostname !== "127.0.0.1" && endpoint.hostname !== "localhost") {
-      throw new Error("SUPABASE_URL must use HTTPS outside local development.");
-    }
+    const databaseUrl = process.env.DATABASE_URL;
+    if (!databaseUrl) throw new Error("Neon intake store is missing DATABASE_URL.");
 
     const id = referenceId();
     const intake = { ...submission };
     delete intake.companyWebsite;
-    const headers: Record<string, string> = {
-      apikey: secretKey,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal",
-    };
-    // Legacy service-role keys are JWTs. New sb_secret_* keys must only be
-    // sent as `apikey`; using one as a bearer token produces an Invalid JWT.
-    if (!secretKey.startsWith("sb_secret_")) {
-      headers.Authorization = `Bearer ${secretKey}`;
-    }
-
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        reference_id: id,
-        language: intake.language,
-        goal: intake.goal,
-        name: intake.name,
-        email: intake.email,
-        phone: intake.phone || null,
-        contact_preference: intake.contactPreference,
-        preferred_language: intake.preferredLanguage,
-        consent_to_contact: intake.consentToContact,
-        intake_data: intake,
-      }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(10_000),
-    });
-
-    if (!response.ok) {
-      const requestId = response.headers.get("x-request-id");
-      throw new Error(
-        `Supabase intake insert failed (${response.status})${requestId ? ` [request ${requestId}]` : ""}.`
-      );
-    }
+    const sql = neon(databaseUrl);
+    await sql`
+      insert into intake_submissions (
+        reference_id,
+        language,
+        goal,
+        name,
+        email,
+        phone,
+        contact_preference,
+        preferred_language,
+        consent_to_contact,
+        intake_data
+      ) values (
+        ${id},
+        ${intake.language},
+        ${intake.goal},
+        ${intake.name},
+        ${intake.email},
+        ${intake.phone || null},
+        ${intake.contactPreference},
+        ${intake.preferredLanguage},
+        ${intake.consentToContact},
+        ${JSON.stringify(intake)}::jsonb
+      )
+    `;
 
     return { ok: true, referenceId: id };
   }
@@ -103,9 +79,11 @@ class SupabaseIntakeStore implements IntakeStore {
 
 export function getIntakeStore(): IntakeStore {
   switch (process.env.INTAKE_STORE) {
-    case "supabase":
-      return new SupabaseIntakeStore();
-    default:
+    case "neon":
+      return new NeonIntakeStore();
+    case "console":
       return new ConsoleIntakeStore();
+    default:
+      return process.env.DATABASE_URL ? new NeonIntakeStore() : new ConsoleIntakeStore();
   }
 }

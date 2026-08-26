@@ -22,14 +22,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Persisting intake submissions with Supabase
+## Persisting intake submissions with Neon
 
-1. Create or select a Supabase project.
-2. Apply `supabase/migrations/20260825170000_create_intake_submissions.sql` in the Supabase SQL editor (or through the Supabase CLI).
-3. Add `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, and `INTAKE_STORE=supabase` as server-side environment variables in Vercel for Production, Preview, and Development as appropriate.
+1. Provision Neon through the Vercel Marketplace and connect it to this project.
+2. Apply `db/migrations/001_create_intake_submissions.sql` to the database.
+3. Ensure Vercel provides `DATABASE_URL` to Production, Preview, and Development. `INTAKE_STORE=neon` is optional; Neon is selected automatically when `DATABASE_URL` is present.
 4. Redeploy, submit a test assessment, and verify the row in `public.intake_submissions`.
 
-The secret key is used only by the server-side intake API. Never expose it using a `NEXT_PUBLIC_` variable. The migration enables RLS and revokes all table access from `anon` and `authenticated`; only the server's `service_role` can insert.
+The database URL is used only by the server-side intake API. Never expose it using a `NEXT_PUBLIC_` variable. The migration revokes access from PostgreSQL's `public` role; the application connects with its private Neon database role.
 
 ## Learn More
 
