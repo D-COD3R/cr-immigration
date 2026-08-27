@@ -1,12 +1,29 @@
 {
-  "state": "attention",
+  "state": "running",
   "projectId": "cr-immigration",
   "milestone": "Content and workflow validation",
   "progress": 56,
-  "lastTask": null,
+  "activeTask": {
+    "id": "53d47c7f-2854-493d-b3cb-5e2b826700ef",
+    "command": "Continue First working prototype",
+    "mode": "CONTINUE_WORKFLOW",
+    "scopes": [
+      "PROJECT"
+    ],
+    "startedAt": "2026-08-27T03:27:02.463Z",
+    "source": "kerberos",
+    "currentActivity": {
+      "id": "kerberos-start",
+      "kind": "status",
+      "label": "Codex task connected",
+      "detail": "Git · main",
+      "status": "completed",
+      "at": "2026-08-27T03:27:03.664Z"
+    }
+  },
   "missing": [
     "Resolve open blockers",
     "Confirm production health"
   ],
-  "updatedAt": "2026-08-26T20:16:20.191Z"
+  "updatedAt": "2026-08-27T03:27:03.665Z"
 }
