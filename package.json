@@ -8,6 +8,7 @@
     "build:test": "node scripts/build-for-tests.mjs",
     "start": "next start",
     "lint": "eslint",
+    "measure:performance": "npm run build:test && node scripts/measure-performance.mjs",
     "test": "npm run build:test && npm run test:core",
     "test:core": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/core-logic.test.mjs",
     "test:integration": "node --test tests/core-flow.test.mjs"
