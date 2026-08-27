@@ -67,8 +67,8 @@ export const intakeSchema = z.object({
 
   consentToContact: z.literal(true, { message: "We need your permission to contact you" }),
 
-  /** Honeypot — must stay empty. Real users never see this field. */
-  companyWebsite: z.literal("").optional(),
+  /** Honeypot — the route silently discards submissions when this is non-empty. */
+  companyWebsite: shortText.optional(),
 
   source: z
     .object({

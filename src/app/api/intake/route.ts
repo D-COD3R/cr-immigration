@@ -37,8 +37,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Bot mitigation: the honeypot field must be empty and the form must have
-  // taken at least a few seconds to complete.
+  // Bot mitigation: real users never see or populate this honeypot field.
   if (parsed.data.companyWebsite) {
     return NextResponse.json({ ok: true }); // silently discard bot submissions
   }

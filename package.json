@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:test": "node scripts/build-for-tests.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "npm run build:test && npm run test:core",
+    "test:core": "node --test tests/core-flow.test.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.1.0",
