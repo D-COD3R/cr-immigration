@@ -45,7 +45,7 @@
     "projectId": "prj_zrU9RmXqfIhHcBb9PzQ9GU8p062Q",
     "projectName": "cr-immigration"
   },
-  "productionUrl": "https://cr-immigration.vercel.app",
+  "productionUrl": null,
   "statusFile": ".kerberos/status.json",
   "contextFile": ".kerberos/context.md"
 }
