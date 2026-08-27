@@ -1,37 +1,29 @@
 {
-  "state": "completed",
+  "state": "running",
   "projectId": "cr-immigration",
   "milestone": "Content and workflow validation",
   "progress": 56,
-  "lastTask": {
-    "id": "6364a1e4-ba6b-4b81-a06f-ba6d73e67aab",
+  "activeTask": {
+    "id": "6f2320d1-38ea-4f18-8884-b959e38ff3d8",
     "command": "Complete linked Kerberos work",
     "mode": "MILESTONE_WORK",
     "scopes": [
       "PROJECT"
     ],
-    "relatedMilestoneId": "core",
-    "relatedIssueId": null,
-    "decision": "APPROVED",
-    "completed": true,
-    "summary": "APPROVED\n\nWHAT WAS NEEDED\nAdd automated core-flow coverage and record verified core-feature evidence.\n\nWHAT CHANGED\n- Added five dependency-free tests covering adaptive intake steps, validation, honeypot handling, persistence references, and rate limiting.\n- Added a supplemental production-server HTTP integration suite.\n- Fixed the previously unreachable honeypot discard path.\n- Added an offline Next.js production-build test runner.\n- Updated Kerberos milestone records.\n\nVALIDATION\n- `npm test`: passed; production build succeeded and 5/5 core tests passed.\n- `npm run lint`: passed.\n- `npx tsc --noEmit`: passed.\n- Script syntax and `git diff --check`: passed.\n- Supplemental HTTP integration execution requires an environment permitting local sockets.\n\nFILES AFFECTED\n- `.kerberos/context.md`\n- `.kerberos/status.json`\n- `package.json`\n- `scripts/build-for-tests.mjs`\n- `src/app/api/intake/route.ts`\n- `src/components/intake/IntakeFlow.tsx`\n- `src/lib/intake/schema.ts`\n- `src/lib/intake/steps.ts`\n- `tests/core-flow.test.mjs`\n- `tests/core-logic.test.mjs`\n- `tests/fixtures/google-fonts.cjs`\n\nREMAINING\nNone for the Core functionality milestone.\n\nRE-AUDIT\nYES — run `npm run test:integration` in normal CI to add full production-server HTTP evidence.",
-    "changedFiles": [
-      "kerberos/context.md",
-      "package.json",
-      "scripts/build-for-tests.mjs",
-      "src/components/intake/IntakeFlow.tsx",
-      "src/lib/intake/steps.ts",
-      "tests/core-logic.test.mjs",
-      "tests/fixtures/"
-    ],
-    "commitBefore": "02a0a5b",
-    "commitAfter": "783ed16",
-    "error": null,
-    "completedAt": "2026-08-27T04:21:29.953Z"
+    "startedAt": "2026-08-27T04:23:44.648Z",
+    "source": "kerberos",
+    "currentActivity": {
+      "id": "kerberos-start",
+      "kind": "status",
+      "label": "Codex task connected",
+      "detail": "Git · main",
+      "status": "completed",
+      "at": "2026-08-27T04:23:45.836Z"
+    }
   },
   "missing": [
     "Resolve open blockers",
     "Confirm production health"
   ],
-  "updatedAt": "2026-08-27T04:21:29.978Z"
+  "updatedAt": "2026-08-27T04:23:45.880Z"
 }
