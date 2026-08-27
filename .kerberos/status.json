@@ -1,29 +1,29 @@
 {
-  "state": "running",
+  "state": "failed",
   "projectId": "cr-immigration",
   "milestone": "Content and workflow validation",
   "progress": 56,
-  "activeTask": {
+  "lastTask": {
     "id": "6f2320d1-38ea-4f18-8884-b959e38ff3d8",
     "command": "Complete linked Kerberos work",
     "mode": "MILESTONE_WORK",
     "scopes": [
       "PROJECT"
     ],
-    "startedAt": "2026-08-27T04:23:44.648Z",
-    "source": "kerberos",
-    "currentActivity": {
-      "id": "kerberos-start",
-      "kind": "status",
-      "label": "Codex task connected",
-      "detail": "Git · main",
-      "status": "completed",
-      "at": "2026-08-27T04:23:45.836Z"
-    }
+    "relatedMilestoneId": "performance",
+    "relatedIssueId": null,
+    "decision": "DENIED",
+    "completed": false,
+    "summary": null,
+    "changedFiles": [],
+    "commitBefore": "917598e",
+    "commitAfter": null,
+    "error": "Kerberos restarted after the Codex run ended, so its final response was not captured. Review the Codex task before continuing.",
+    "completedAt": "2026-08-27T04:56:26.842Z"
   },
   "missing": [
     "Resolve open blockers",
     "Confirm production health"
   ],
-  "updatedAt": "2026-08-27T04:23:45.880Z"
+  "updatedAt": "2026-08-27T04:56:26.844Z"
 }
