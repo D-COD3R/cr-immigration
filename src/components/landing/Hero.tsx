@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, Check, CircleDashed } from "lucide-react";
 import { t } from "@/content/translations";
 import type { Lang } from "@/content/site";
