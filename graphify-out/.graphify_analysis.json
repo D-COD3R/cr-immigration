@@ -1,0 +1,406 @@
+{
+  "communities": {
+    "0": [
+      "src_app_page",
+      "src_app_page_metadata",
+      "src_components_landing_faqsection",
+      "src_components_landing_faqsection_faqsection",
+      "src_components_landing_finalcta",
+      "src_components_landing_finalcta_finalcta",
+      "src_components_landing_hero",
+      "src_components_landing_hero_hero",
+      "src_components_landing_hero_herovisual",
+      "src_components_landing_howitworks",
+      "src_components_landing_howitworks_howitworks",
+      "src_components_landing_journeypreview",
+      "src_components_landing_journeypreview_journeypreview",
+      "src_components_landing_journeypreview_statusstyles",
+      "src_components_landing_pathselector",
+      "src_components_landing_pathselector_pathselector",
+      "src_components_landing_services",
+      "src_components_landing_services_services",
+      "src_components_landing_trackedlink_trackedlink",
+      "src_components_layout_footer",
+      "src_components_layout_header",
+      "src_components_layout_header_mobilectabar",
+      "src_components_layout_header_wordmark",
+      "src_components_layout_languagetoggle",
+      "src_components_layout_languagetoggle_languagetoggle",
+      "src_components_layout_languagetoggle_languagetoggle_switchto",
+      "src_components_layout_languagetoggle_setlangcookie",
+      "src_content_faq",
+      "src_content_faq_faq",
+      "src_content_faq_faqitem",
+      "src_content_immigration_paths",
+      "src_content_immigration_paths_getpath",
+      "src_content_immigration_paths_immigrationpath",
+      "src_content_immigration_paths_immigrationpaths",
+      "src_content_immigration_paths_requirements_disclaimer",
+      "src_content_site",
+      "src_content_site_lang",
+      "src_content_translations",
+      "src_content_translations_t"
+    ],
+    "1": [
+      "src_app_api_intake_route",
+      "src_app_api_intake_route_clientkey",
+      "src_app_api_intake_route_post",
+      "src_app_api_intake_route_runtime",
+      "src_lib_intake_rate_limit",
+      "src_lib_intake_rate_limit_bucket",
+      "src_lib_intake_rate_limit_buckets",
+      "src_lib_intake_rate_limit_checkratelimit",
+      "src_lib_intake_rate_limit_lastcleanup",
+      "src_lib_intake_rate_limit_ratelimitresult",
+      "src_lib_intake_schema",
+      "src_lib_intake_schema_contact_preferences",
+      "src_lib_intake_schema_goals",
+      "src_lib_intake_schema_intakeschema",
+      "src_lib_intake_schema_intakesubmission",
+      "src_lib_intake_schema_longtext",
+      "src_lib_intake_schema_preferred_languages",
+      "src_lib_intake_schema_qualification_keys",
+      "src_lib_intake_schema_shorttext",
+      "src_lib_intake_schema_timelines",
+      "src_lib_intake_store",
+      "src_lib_intake_store_consoleintakestore",
+      "src_lib_intake_store_consoleintakestore_save",
+      "src_lib_intake_store_getintakestore",
+      "src_lib_intake_store_intakestore",
+      "src_lib_intake_store_intakestore_save",
+      "src_lib_intake_store_intakestoreresult",
+      "src_lib_intake_store_neonintakestore",
+      "src_lib_intake_store_neonintakestore_save",
+      "src_lib_intake_store_referenceid",
+      "tests_core_logic_test",
+      "tests_core_logic_test_basedraft",
+      "tests_core_logic_test_validpayload"
+    ],
+    "2": [
+      "src_components_intake_intakeflow",
+      "src_components_intake_intakeflow_contactstep",
+      "src_components_intake_intakeflow_fieldlabel",
+      "src_components_intake_intakeflow_formatvalue",
+      "src_components_intake_intakeflow_honeypotref",
+      "src_components_intake_intakeflow_intakeflow",
+      "src_components_intake_intakeflow_intakeflow_cancontinue",
+      "src_components_intake_intakeflow_intakeflow_goback",
+      "src_components_intake_intakeflow_intakeflow_gonext",
+      "src_components_intake_intakeflow_intakeflow_handlesubmit",
+      "src_components_intake_intakeflow_intakeflow_honeypotsetter",
+      "src_components_intake_intakeflow_intakeflow_update",
+      "src_components_intake_intakeflow_intakeflowprops",
+      "src_components_intake_intakeflow_optionbutton",
+      "src_components_intake_intakeflow_qualificationstep",
+      "src_components_intake_intakeflow_qualkeyfor",
+      "src_components_intake_intakeflow_question",
+      "src_components_intake_intakeflow_reviewstep",
+      "src_components_landing_trackedlink",
+      "src_content_intake_copy",
+      "src_content_intake_copy_intakecopy",
+      "src_lib_analytics",
+      "src_lib_analytics_analyticsevent",
+      "src_lib_analytics_eventpayload",
+      "src_lib_analytics_setanalyticssink",
+      "src_lib_analytics_track",
+      "src_lib_analytics_window",
+      "src_lib_intake_schema_intakedraft",
+      "src_lib_intake_steps",
+      "src_lib_intake_steps_buildsteps",
+      "src_lib_intake_steps_goals_with_qualification",
+      "src_lib_intake_steps_stepid"
+    ],
+    "3": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "ref_mts",
+      "ref_next_dev_types_ts",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_node_modules",
+      "ref_ts",
+      "ref_tsx",
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "4": [
+      "lucide_react",
+      "neondatabase_serverless",
+      "next",
+      "package",
+      "package_dependencies",
+      "package_dependencies_lucide_react",
+      "package_dependencies_neondatabase_serverless",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_zod",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_build_test",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_measure_performance",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_core",
+      "package_scripts_test_integration",
+      "package_version",
+      "react",
+      "react_dom",
+      "zod"
+    ],
+    "5": [
+      "src_app_page_homepage",
+      "src_app_privacy_page",
+      "src_app_privacy_page_l",
+      "src_app_privacy_page_metadata",
+      "src_app_privacy_page_privacypage",
+      "src_app_start_page",
+      "src_app_start_page_metadata",
+      "src_app_start_page_startpage",
+      "src_app_terms_page",
+      "src_app_terms_page_l",
+      "src_app_terms_page_metadata",
+      "src_app_terms_page_termspage",
+      "src_components_layout_footer_footer",
+      "src_components_layout_header_header",
+      "src_content_site_defaultlang",
+      "src_content_site_lang_cookie",
+      "src_content_site_languages",
+      "src_lib_lang",
+      "src_lib_lang_getlang",
+      "src_lib_lang_islang",
+      "src_lib_lang_pick"
+    ],
+    "6": [
+      "eslint",
+      "eslint_config_next",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "tailwindcss",
+      "tailwindcss_postcss",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript"
+    ],
+    "7": [
+      "scripts_measure_performance",
+      "scripts_measure_performance_assetsize",
+      "scripts_measure_performance_buildmanifest",
+      "scripts_measure_performance_kib",
+      "scripts_measure_performance_measurements",
+      "scripts_measure_performance_projectroot",
+      "scripts_measure_performance_readclientmanifest",
+      "scripts_measure_performance_readjson",
+      "scripts_measure_performance_rootjavascript",
+      "scripts_measure_performance_routes",
+      "scripts_measure_performance_sumassets"
+    ],
+    "8": [
+      "src_app_layout",
+      "src_app_layout_instrumentsans",
+      "src_app_layout_metadata",
+      "src_app_layout_newsreader",
+      "src_app_layout_rootlayout",
+      "src_app_layout_viewport",
+      "src_app_robots",
+      "src_app_robots_robots",
+      "src_app_sitemap",
+      "src_app_sitemap_sitemap",
+      "src_content_site_site"
+    ],
+    "9": [
+      "scripts_build_for_tests",
+      "scripts_build_for_tests_env",
+      "scripts_build_for_tests_fontmocks",
+      "scripts_build_for_tests_nextbin",
+      "scripts_build_for_tests_result"
+    ],
+    "10": [
+      "tests_core_flow_test",
+      "tests_core_flow_test_availableport",
+      "tests_core_flow_test_projectroot",
+      "tests_core_flow_test_stopserver",
+      "tests_core_flow_test_waitforserver"
+    ],
+    "11": [
+      "db_migrations_001_create_intake_submissions",
+      "db_migrations_001_create_intake_submissions_public_intake_submissions"
+    ],
+    "12": [
+      "eslint_config",
+      "eslint_config_eslintconfig"
+    ],
+    "13": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "14": [
+      "postcss_config",
+      "postcss_config_config"
+    ],
+    "15": [
+      "tests_fixtures_google_fonts"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13360323886639677,
+    "1": 0.10227272727272728,
+    "2": 0.09475806451612903,
+    "3": 0.06896551724137931,
+    "4": 0.07407407407407407,
+    "5": 0.15714285714285714,
+    "6": 0.11764705882352941,
+    "7": 0.2,
+    "8": 0.18181818181818182,
+    "9": 0.4,
+    "10": 0.4,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_content_site_lang",
+      "label": "Lang",
+      "degree": 19
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "src_content_translations_t",
+      "label": "t",
+      "degree": 12
+    },
+    {
+      "id": "src_components_intake_intakeflow_intakeflow",
+      "label": "IntakeFlow()",
+      "degree": 11
+    },
+    {
+      "id": "src_lib_lang_getlang",
+      "label": "getLang()",
+      "degree": 10
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 10
+    },
+    {
+      "id": "src_lib_analytics_track",
+      "label": "track()",
+      "degree": 9
+    },
+    {
+      "id": "src_content_site_site",
+      "label": "site",
+      "degree": 8
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 7
+    },
+    {
+      "id": "src_lib_intake_store_getintakestore",
+      "label": "getIntakeStore()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "IntakeFlowProps",
+      "target": "Lang",
+      "source_files": [
+        "src/components/intake/IntakeFlow.tsx",
+        "src/content/site.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities; peripheral node `IntakeFlowProps` unexpectedly reaches hub `Lang`"
+    },
+    {
+      "source": "FaqItem",
+      "target": "Lang",
+      "source_files": [
+        "src/content/faq.ts",
+        "src/content/site.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `FaqItem` unexpectedly reaches hub `Lang`"
+    },
+    {
+      "source": "ImmigrationPath",
+      "target": "Lang",
+      "source_files": [
+        "src/content/immigration-paths.ts",
+        "src/content/site.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `ImmigrationPath` unexpectedly reaches hub `Lang`"
+    },
+    {
+      "source": "TrackedLink()",
+      "target": "track()",
+      "source_files": [
+        "src/components/landing/TrackedLink.tsx",
+        "src/lib/analytics.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "HomePage()",
+      "target": "getLang()",
+      "source_files": [
+        "src/app/page.tsx",
+        "src/lib/lang.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `HomePage()` unexpectedly reaches hub `getLang()`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
